@@ -23,3 +23,10 @@ wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_6
 tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2
 mv phantomjs-1.9.7-linux-x86_64 phantomjs
 ln -s `pwd`/phantomjs/bin/phantomjs /usr/local/bin
+
+# Hack some paths and stuff.
+mkdir -p /home/ubuntu
+ln -s /server /home/ubuntu/level-crash
+ln -s /server/level_crash.conf /etc/init/
+initctl reload-configuration
+start level_crash
